@@ -1,0 +1,137 @@
+body
+{
+    background-color: #feef6d;
+}
+
+.rounded-box-one {
+    padding: 15px;            
+    border-radius: 15px;
+    font-size: xx-large;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: 'Noto Sans Georgian', sans-serif;
+    background-color: #fff8bd;
+    border: 5px solid #FEE93A;
+    text-align: center;    
+}
+
+.rounded-box-two {
+    padding: 5px;            
+    border-radius: 15px;
+    font-size: large;
+    margin-left: 30%;
+    margin-right: 30%;
+    font-family: 'Noto Sans Georgian', sans-serif;
+    background-color: #fff8bd;
+    border: 2px solid #FEE93A;
+    text-align: center;    
+}
+
+.article-box{
+    margin: 2%;
+    padding:2%;
+    border-radius: 5px;
+    width: auto;
+    background-color: #fff48e;
+    border: 5px solid #FEE93A;
+    text-align: left;   
+}
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) { 
+    .article-box{
+        margin: 4%;
+        padding:3%;
+        border-radius: 5px;
+        width: auto;
+        background-color: #fff48e;
+        border: 5px solid #FEE93A;
+        text-align: left;   
+    }
+    .logo{
+        width: 20%;
+        height: auto;
+    }
+    .rounded-box-one {
+        padding: 15px;            
+        border-radius: 15px;
+        font-size: large;
+        font-family: 'Noto Sans Georgian', sans-serif;
+        background-color: #fff8bd;
+        border: 5px solid #FEE93A;
+        text-align: center;    
+    }
+    .rounded-box-two {
+        padding: 5px;            
+        border-radius: 15px;
+        font-size: normal;
+        margin-left: 20%;
+        margin-right: 20%;
+        font-family: 'Noto Sans Georgian', sans-serif;
+        background-color: #fff8bd;
+        border: 2px solid #FEE93A;
+        text-align: center;    
+    }
+}
+  
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+    .logo{
+        width: 20%;
+        height: auto;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .logo{
+        width: 20%;
+        height: auto;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .logo{
+        width: 15%;
+        height: auto;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    .logo{
+        width: 13%;
+        height: auto;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) - Bootstrap 5 only */
+@media (min-width: 1400px) { 
+    .logo{
+        width: 10%;
+        height: auto;
+        
+    }
+    .rounded-box-one {
+        padding: 15px;            
+        border-radius: 15px;
+        font-size: xx-large;
+        font-family: 'Noto Sans Georgian', sans-serif;
+        background-color: #fff8bd;
+        border: 5px solid #FEE93A;
+        text-align: center;    
+    }
+}
+
+
+
+
+.gradient-box {
+    padding: 2.5%;
+    border-radius: 15px;
+    display: inline-block;
+    width: calc(100%); /* Adjust width based on the button's width + margin */
+    height: 1000px; /* Adjust height as needed */
+    background: linear-gradient(to bottom, #7683fc, #feef6d);
+}

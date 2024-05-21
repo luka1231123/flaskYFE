@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.body-text
+{
+    height: 70%
+}
+
+#password {
+    width: 30%;
+    margin-top: 20px;
+}
+
+#title {
+    width: 50%;
+    margin: 20px 0;
+}
+
+#body-text {
+    width: 100%;
+    flex-grow: 1;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+}

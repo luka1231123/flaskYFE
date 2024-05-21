@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>admin page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+{% endblock %}
+
+{% block body %}
+<form action="/admin" method="POST">
+    <input type="password" id="password" name="password" placeholder="Password">
+    <input type="text" name="title" id="title" placeholder="Title">
+    <textarea class="body-text" id="body-text" name="body-text" placeholder="Body Text"></textarea>
+    <input type="submit" value ="Submit">
+</form>
+<br>
+<p>ტექსტის ქვედა მარჯვენა კუთხეს თუ ჩამოწევ ზომა გაიზრდება</p>
+<a href="/">go back</a>
+{% endblock %}
