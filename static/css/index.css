@@ -40,13 +40,13 @@ body
 /* Extra small devices (phones, less than 576px) */
 @media (max-width: 575.98px) { 
     .article-box{
-        margin: 4%;
-        padding:3%;
+        margin: 5%;
+        padding:2%;
         border-radius: 5px;
-        width: auto;
+        width: 80%;
         background-color: #fff48e;
         border: 5px solid #FEE93A;
-        text-align: left;   
+        text-align: center;   
     }
     .logo{
         width: 20%;

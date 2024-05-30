@@ -14,7 +14,7 @@
   </div>
   <div class="d-block d-lg-none">
     <div class="mx-2 my-2 text-center">
-      <div class="rounded-box-one">ᲐᲮᲐᲚᲒᲐᲖᲠᲓᲔᲑᲘ</div>
+      <div class="rounded-box-one">ᲐᲮᲐᲚᲒᲐᲖᲠᲓᲔᲑᲘ <br> ᲔᲕᲠᲝᲞᲘᲡᲗᲕᲘᲡ</div>
     </div>
   </div>
 
@@ -32,10 +32,10 @@
   <div class="d-block d-lg-none">
     <div class="gradient-box">
       <div class="row justify-content-center">
-        {% for i in range(20)%}
-        <button class="article-box btn btn-primary">
-          <p class="h3 nt"> ᲡᲐᲗᲐᲣᲠᲘ </p>
-          <p class="h5 nt"> თარიღი </p>
+        {% for stat in stats%}
+        <button class="article-box btn btn-primary" onclick="window.location.href='{{ 'statia/' + stat.id|string }}'">
+          <p class="h3 nt"> {{ stat.title }} </p>
+          <p class="h5 nt"> {{stat.date_created.date()}} </p>
         </button>
         {%endfor%}
       </div>
@@ -49,7 +49,7 @@
   <div class="container">
   <div class="row justify-content-center">
     {% for stat in stats%}
-    <button class="article-box btn btn-primary">
+    <button class="article-box btn btn-primary" onclick="window.location.href='{{ 'statia/' + stat.id|string }}'">
       <p class="h3 nt"> {{ stat.title }} </p>
       <p class="h5 nt"> {{stat.date_created.date()}} </p>
     </button>
@@ -59,4 +59,5 @@
 </div>
 </div>
 
+<script src="{{url_for('static', filename='js/index.js')}}"></script>
 {% endblock %}

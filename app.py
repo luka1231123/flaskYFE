@@ -46,7 +46,11 @@ def admin():
     else:
         return render_template('admin.html')
 
-    
+@app.route("/statia/<id>")
+def statia(id):
+    entry = stat.query.get(id)
+    return render_template('stat.html', entry=entry)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
