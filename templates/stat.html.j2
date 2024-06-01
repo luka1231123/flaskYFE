@@ -1,0 +1,46 @@
+{% extends 'base.html.j2' %} 
+{% block head %}
+<title>stat</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/stat.css') }}">
+{% endblock %} 
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fff8bd; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);">
+  <div class="container-fluid mx-3">
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <img src="{{url_for('static', filename='images/youth.png')}}" alt="Logo" height="80" class="d-inline-block align-top">
+      <div class="d-block d-lg-none">
+        <div class="mx-2 text-center">
+          ᲐᲮᲐᲚᲒᲐᲖᲠᲓᲔᲑᲘ <br> ᲔᲕᲠᲝᲞᲘᲡᲗᲕᲘᲡ
+        </div>
+      </div>
+      <div class="d-none d-lg-block">
+        <div class="mx-4 text-center nt main-text">
+          ᲐᲮᲐᲚᲒᲐᲖᲠᲓᲔᲑᲘ ᲔᲕᲠᲝᲞᲘᲡᲗᲕᲘᲡ
+        </div>
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">ჩვენ შესახებ</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">კატალოგი</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="card p-3 mt-3" style="border-radius: 20px; background-color: rgb(255, 254, 243);">
+        <h1 class="text-center">{{ entry.title }}</h1>
+        <p class="text-center text-muted">Published on: {{ entry.date_created.strftime('%Y-%m-%d') }}</p>
+        <div class="body-text text-center">{{ entry.content | safe }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+

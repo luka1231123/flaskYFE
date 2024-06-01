@@ -1,0 +1,112 @@
+{% extends 'base.html.j2' %}
+
+{% block head %}
+<title>youth for europe</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<style>
+  .gradient-box {
+    padding: 2.5%;
+    border-radius: 15px;
+    display: inline-block;
+    width: calc(100%); /* Adjust width based on the button's width + margin */
+    height: calc(100% + 200px); /* Adjust height as needed */
+    height: calc(2000px + {{ entries_length * 200 }}px);
+    background: linear-gradient(to bottom, #E6E9FF, #fffce6);
+}
+</style>
+<script>
+
+</script>
+{% endblock %}
+
+{% block body %}
+<!-- Image and text -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fff8bd; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);">
+  <div class="container-fluid mx-3">
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <img src="{{url_for('static', filename='images/youth.png')}}" alt="Logo" height="80" class="d-inline-block align-top">
+      <div class="d-block d-lg-none">
+        <div class="mx-2 text-center">
+          ᲐᲮᲐᲚᲒᲐᲖᲠᲓᲔᲑᲘ <br> ᲔᲕᲠᲝᲞᲘᲡᲗᲕᲘᲡ
+        </div>
+      </div>
+      <div class="d-none d-lg-block">
+        <div class="mx-4 text-center nt main-text">
+          ᲐᲮᲐᲚᲒᲐᲖᲠᲓᲔᲑᲘ ᲔᲕᲠᲝᲞᲘᲡᲗᲕᲘᲡ
+        </div>
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">ჩვენ შესახებ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">კატალოგი</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+
+  <div class="d-block d-lg-none">
+    <div class="row">
+      <div class="col-6 mt-3">
+        <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/'" style="border: 4px solid #6D7CFE;">ახალი სტატიები</div>
+      </div>
+      <div class="col-6 mt-3">
+        <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/interviews'">ინტერვიუები</div>
+      </div>
+    </div>
+    <br>
+  </div>
+  
+  <div class="d-none d-lg-block">
+    <div class="row">
+      <div class="col-4 mt-3"></div>
+      <div class="col-2 mt-3">
+        <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/'" style="border: 4px solid #6D7CFE;">ახალი სტატიები</div>
+      </div>
+      <div class="col-2 mt-3">
+        <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/interviews'">ინტერვიუები</div>
+      </div>
+      <div class="col-4 mt-3"></div>
+    </div>
+    <br>
+  </div>
+
+<!-- the actual article list -->
+
+  <div class="cont">
+  <div class="gradient-box">
+      <div class="container-fluid">
+        {% for stat in stats%}
+        <hr>
+        <div class="row" onclick="window.location.href='{{ 'statia/' + stat.id|string }}'">
+          <div class="col-7 article-box">
+            <div class="d-block d-lg-none">
+            <p class="h5 nt m-0"> {{stat.title}}</p>
+            </div>
+            <div class="d-none d-lg-block">
+            <p class="h4 nt mx-3"> {{stat.title}}</p>
+            <p class="h5 nt mx-3"> {{stat.date_created.date()}}</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <img class="img-fluid article-logo" src="{{ url_for('static', filename='images/sample.png') }}">
+          </div>
+        </div>
+        <hr>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{{url_for('static', filename='js/index.js')}}"></script>
+{% endblock %}
