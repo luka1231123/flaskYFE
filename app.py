@@ -17,16 +17,23 @@ class stat(db.Model):
         return '<Content %r>' % self.id
 
 
+
+
 @app.route("/")
 def index():
     stats = stat.query.order_by(stat.date_created).all()
-    return render_template('index.html', stats=stats)
+    entries_length = len(stats)
+    return render_template('index.html.j2', stats=stats, entries_length=entries_length)
 
+@app.route("/interviews")
+def interviews():
+    stats = stat.query.order_by(stat.date_created).all()
+    entries_length = len(stats)
+    return render_template('interviews.html.j2', stats=stats, entries_length=entries_length)
 
 @app.route("/admin", methods=['POST', 'GET'])
 def admin():
     if request.method=='POST':
-        #password = request.form['password']
         password = request.form.get('password')
         title = request.form.get('title')
         body = request.form.get('body-text')
@@ -44,12 +51,12 @@ def admin():
             return "<a href='/admin'>incorrect password </a>" 
 
     else:
-        return render_template('admin.html')
+        return render_template('admin.html.j2')
 
 @app.route("/statia/<id>")
 def statia(id):
     entry = stat.query.get(id)
-    return render_template('stat.html', entry=entry)
+    return render_template('stat.html.j2', entry=entry)
 
 
 if __name__ == "__main__":
