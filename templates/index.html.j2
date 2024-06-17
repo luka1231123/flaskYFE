@@ -10,7 +10,7 @@
     display: inline-block;
     width: calc(100%); /* Adjust width based on the button's width + margin */
     height: calc(100% + 200px); /* Adjust height as needed */
-    height: calc(2000px + {{ entries_length * 200 }}px);
+    height: calc(200px + {{ entries_length * 200 }}px);
     background: linear-gradient(to bottom, #E6E9FF, #fffce6);
 }
 </style>
@@ -97,8 +97,8 @@
             <p class="h5 nt mx-3"> {{stat.date_created.date()}}</p>
             </div>
           </div>
-          <div class="col-4">
-            <img class="img-fluid article-logo" src="{{ url_for('static', filename='images/sample.png') }}">
+          <div class="col-4 m-0">
+            <img class="img-fluid article-logo" src="{{ stat.filename }}">
           </div>
         </div>
         <hr>

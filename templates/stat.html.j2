@@ -34,10 +34,10 @@
 <div class="container-fluid">
   <div class="row justify-content-center">
     <div class="col-md-10">
-      <div class="card p-3 mt-3" style="border-radius: 20px; background-color: rgb(255, 254, 243);">
+      <div class="card p-3 mt-3" style="border-radius: 20px;">
         <h1 class="text-center">{{ entry.title }}</h1>
         <p class="text-center text-muted">Published on: {{ entry.date_created.strftime('%Y-%m-%d') }}</p>
-        <div class="body-text text-center">{{ entry.content | safe }}</div>
+        <div class="body-text text-left main-text">{{ entry.content | safe }}</div>
       </div>
     </div>
   </div>

@@ -5,9 +5,7 @@ body
 
 .article-logo{
     border-radius: 5%;
-    max-height: 130px;
-    max-width: 500px;
-    
+    max-width: 130%;
 }
 .rounded-box-two {
     height: 100%;
@@ -33,7 +31,19 @@ body
     font-size: large;
     font-family: 'Noto Sans Georgian', sans-serif;
     text-align: left;  
-    transition: background-color 0.1s;
+    transition: background-color 0.3s;
+}
+
+.article-logo:hover {
+    -webkit-filter: brightness(120%) saturate(1.2);
+    filter: brightness(120%) saturate(1.2);
+    transition: filter 0.3s;
+}
+
+.article-logo:active {
+    -webkit-filter: brightness(100%) saturate(1.2);
+    filter: brightness(100%) saturate(1.2);
+    transition: filter 0.3s;
 }
 
 .article-box:hover {
@@ -59,11 +69,10 @@ body
 }
 
 /* Extra small devices (phones, less than 576px) */
-@media (max-width: 575.98px) { 
-    .article-logo{
-        border-radius: 5%;
-        max-height: 70px;
-        max-width: 124px;
+@media (max-width: 575.98px) {
+    .article-logo
+    {
+        max-width: 130%;
     }
     .article-box{
         text-align: center;

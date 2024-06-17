@@ -28,6 +28,10 @@ form {
     width: 50%;
     margin: 20px 0;
 }
+#filename {
+    width: 50%;
+    margin: 20px 0;
+}
 
 #body-text {
     width: 100%;

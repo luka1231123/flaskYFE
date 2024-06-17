@@ -54,7 +54,6 @@
 
 <div class="container-fluid">
 
-
   <div class="d-block d-lg-none">
     <div class="row">
       <div class="col-6 mt-3">
@@ -69,46 +68,44 @@
   
   <div class="d-none d-lg-block">
     <div class="row">
-      <div class="col-3 mt-3"></div>
-      <div class="col-3 mt-3">
-        <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/'" >ახალი სტატიები</div>
+      <div class="col-4 mt-3"></div>
+      <div class="col-2 mt-3">
+        <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/'">ახალი სტატიები</div>
       </div>
-      <div class="col-3 mt-3">
+      <div class="col-2 mt-3">
         <div class="btn btn-primary rounded-box-two nt" onclick="window.location.href='/interviews'" style="border: 4px solid #6D7CFE;">ინტერვიუები</div>
       </div>
-      <div class="col-3 mt-3"></div>
+      <div class="col-4 mt-3"></div>
     </div>
     <br>
   </div>
-  <div class="d-block d-lg-none">
-    <!--Small-->
-    <div class="gradient-box">
-      <div class="row justify-content-center">
+
+<!-- the actual article list -->
+
+  <div class="cont">
+  <div class="gradient-box">
+      <div class="container-fluid">
         {% for stat in stats%}
-        <button class="article-box btn btn-primary" onclick="window.location.href='{{ 'statia/' + stat.id|string }}'">
-          <p class="h3 nt"> {{ stat.title }} </p>
-          <p class="h5 nt"> {{stat.date_created.date()}} </p>
-        </button>
-        {%endfor%}
+        <hr>
+        <div class="row" onclick="window.location.href='{{ stat.content }}'">
+          <div class="col-7 article-box">
+            <div class="d-block d-lg-none">
+            <p class="h5 nt m-0"> {{stat.title}}</p>
+            </div>
+            <div class="d-none d-lg-block">
+            <p class="h4 nt mx-3"> {{stat.title}}</p>
+            <p class="h5 nt mx-3"> {{stat.date_created.date()}}</p>
+            </div>
+          </div>
+          <div class="col-4 m-0">
+            <img class="img-fluid article-logo" src="{{ stat.filename }}">
+          </div>
+        </div>
+        <hr>
+        {% endfor %}
       </div>
     </div>
   </div>
-</div>
-
-<div class="d-none d-lg-block">
-
-<div class="gradient-box">
-  <div class="container">
-  <div class="row justify-content-center">
-    {% for stat in stats%}
-    <button class="article-box btn btn-primary" onclick="window.location.href='{{ 'statia/' + stat.id|string }}'">
-      <p class="h3 nt"> {{ stat.title }} </p>
-      <p class="h5 nt"> {{stat.date_created.date()}} </p>
-    </button>
-    {%endfor%}
-  </div>
-  </div>
-</div>
 </div>
 
 <script src="{{url_for('static', filename='js/index.js')}}"></script>
